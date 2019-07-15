@@ -10,8 +10,6 @@ import uk.gov.dhsc.htbhf.eligibility.model.EligibilityStatus;
 import uk.gov.dhsc.htbhf.smartstub.model.BenefitDTO;
 import uk.gov.dhsc.htbhf.smartstub.model.DWPEligibilityRequest;
 
-import javax.validation.Valid;
-
 @RestController
 @RequestMapping("/v1/dwp/benefits")
 @Slf4j
@@ -19,8 +17,7 @@ import javax.validation.Valid;
 public class DWPBenefitController {
 
     @PostMapping
-    public BenefitDTO getBenefits(@RequestBody @Valid DWPEligibilityRequest eligibilityRequest) {
-        log.debug("Received DWP eligibility request {}", eligibilityRequest);
+    public BenefitDTO getBenefits(@RequestBody DWPEligibilityRequest eligibilityRequest) {
         BenefitDTO benefits = BenefitDTO.builder().eligibilityStatus(EligibilityStatus.NO_MATCH).build();
         log.debug("Sending DWP response {}", benefits);
         return benefits;
