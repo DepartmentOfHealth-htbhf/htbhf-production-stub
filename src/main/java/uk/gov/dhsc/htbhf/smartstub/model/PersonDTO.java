@@ -16,20 +16,16 @@ import javax.validation.constraints.Pattern;
 @AllArgsConstructor(onConstructor_ = {@JsonCreator})
 public class PersonDTO {
 
-    @NotNull
     @JsonProperty("forename")
     private final String forename;
 
-    @NotNull
     @JsonProperty("surname")
     private final String surname;
 
-    @NotNull
     @Pattern(regexp = "[a-zA-Z]{2}\\d{6}[a-dA-D]")
     @JsonProperty("nino")
     private final String nino;
 
-    @NotNull
     @Past
     @JsonProperty("dateOfBirth")
     private final LocalDate dateOfBirth;

@@ -8,28 +8,21 @@ import lombok.Data;
 
 import java.math.BigDecimal;
 import java.time.LocalDate;
-import javax.validation.Valid;
-import javax.validation.constraints.NotNull;
 
 @Data
 @Builder
 @AllArgsConstructor(onConstructor_ = {@JsonCreator})
 public class HMRCEligibilityRequest {
 
-    @NotNull
-    @Valid
     @JsonProperty("person")
     private PersonDTO person;
 
-    @NotNull
     @JsonProperty("ctcAnnualIncomeThreshold")
     private final BigDecimal ctcAnnualIncomeThreshold;
 
-    @NotNull
     @JsonProperty("eligibleStartDate")
     private final LocalDate eligibleStartDate;
 
-    @NotNull
     @JsonProperty("eligibleEndDate")
     private final LocalDate eligibleEndDate;
 }
