@@ -1,0 +1,14 @@
+---
+applications:
+- name: htbhf-production-stub
+  buildpacks:
+  - java_buildpack
+  health-check-type: http
+  health-check-http-endpoint: /actuator/health
+  routes:
+    - route: htbhf-production-stub.apps.internal
+  env:
+    JBP_CONFIG_OPEN_JDK_JRE: '{jre: { version: 11.+ }}'
+  services:
+    - logit-ssl-drain
+    - variable-service
