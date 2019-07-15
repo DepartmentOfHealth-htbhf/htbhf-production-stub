@@ -7,3 +7,7 @@ During private beta, all eligible applications should be found in the database a
 If the user enter's in their details incorrectly, they will not be found in the database and our service will call the external DWP/HMRC apis, which currently do not exist.
 
 For any valid request, the service will return with an eligibility status of NO_MATCH.
+
+## Deployment
+To deploy, first login to the production space using `cf login`
+The run `cf push` from the project's root directory. 
