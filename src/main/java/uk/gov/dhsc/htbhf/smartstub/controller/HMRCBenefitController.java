@@ -1,6 +1,5 @@
 package uk.gov.dhsc.htbhf.smartstub.controller;
 
-import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -13,7 +12,6 @@ import uk.gov.dhsc.htbhf.smartstub.model.HMRCEligibilityRequest;
 @RestController
 @RequestMapping("/v1/hmrc/benefits")
 @Slf4j
-@AllArgsConstructor
 public class HMRCBenefitController {
 
     @PostMapping
