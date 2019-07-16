@@ -5,7 +5,7 @@ import uk.gov.dhsc.htbhf.smartstub.model.DWPEligibilityRequest;
 import java.math.BigDecimal;
 import java.time.LocalDate;
 
-import static uk.gov.dhsc.htbhf.smartstub.helper.PersonTestFactory.aValidPerson;
+import static uk.gov.dhsc.htbhf.smartstub.helper.PersonDTOTestDataFactory.aValidPerson;
 
 public class DWPEligibilityRequestTestDataFactory {
 

@@ -18,7 +18,6 @@ public class DWPBenefitController {
 
     @PostMapping
     public BenefitDTO getBenefits(@RequestBody DWPEligibilityRequest eligibilityRequest) {
-        log.debug("Received DWP eligibility request {}", eligibilityRequest);
         BenefitDTO benefits = BenefitDTO.builder().eligibilityStatus(EligibilityStatus.NO_MATCH).build();
         log.debug("Sending DWP response {}", benefits);
         return benefits;
