@@ -15,7 +15,7 @@ import java.net.URI;
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.springframework.http.HttpStatus.OK;
 import static uk.gov.dhsc.htbhf.eligibility.model.EligibilityStatus.NO_MATCH;
-import static uk.gov.dhsc.htbhf.smartstub.helper.HMRCEligibilityRequestTestDataFactory.anHMRCEligibilityRequest;
+import static uk.gov.dhsc.htbhf.smartstub.helper.HMRCEligibilityRequestTestDataFactory.aHMRCEligibilityRequest;
 
 @ExtendWith(SpringExtension.class)
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
@@ -28,7 +28,7 @@ class HMRCBenefitControllerIntegrationTest {
 
     @Test
     void shouldReturnNoMatch() {
-        HMRCEligibilityRequest anEligibilityRequest = anHMRCEligibilityRequest();
+        HMRCEligibilityRequest anEligibilityRequest = aHMRCEligibilityRequest();
 
         ResponseEntity<BenefitDTO> benefit = restTemplate.postForEntity(ENDPOINT, anEligibilityRequest, BenefitDTO.class);
 

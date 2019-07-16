@@ -18,7 +18,6 @@ public class HMRCBenefitController {
 
     @PostMapping
     public BenefitDTO getBenefits(@RequestBody HMRCEligibilityRequest eligibilityRequest) {
-        log.debug("Received HMRC eligibility request {}", eligibilityRequest);
         BenefitDTO benefits = BenefitDTO.builder().eligibilityStatus(EligibilityStatus.NO_MATCH).build();
         log.debug("Sending HRMC response {}", benefits);
         return benefits;

@@ -5,7 +5,7 @@ import uk.gov.dhsc.htbhf.smartstub.model.HMRCEligibilityRequest;
 import java.math.BigDecimal;
 import java.time.LocalDate;
 
-import static uk.gov.dhsc.htbhf.smartstub.helper.PersonTestFactory.aValidPerson;
+import static uk.gov.dhsc.htbhf.smartstub.helper.PersonDTOTestDataFactory.aValidPerson;
 
 public class HMRCEligibilityRequestTestDataFactory {
 
@@ -13,7 +13,7 @@ public class HMRCEligibilityRequestTestDataFactory {
     private static final LocalDate ELIGIBLE_START_DATE = LocalDate.parse("2019-02-14");
     private static final BigDecimal CTC_MONTHLY_INCOME_THRESHOLD = BigDecimal.valueOf(11000);
 
-    public static HMRCEligibilityRequest anHMRCEligibilityRequest() {
+    public static HMRCEligibilityRequest aHMRCEligibilityRequest() {
         return HMRCEligibilityRequest.builder()
                 .person(aValidPerson())
                 .eligibleStartDate(ELIGIBLE_START_DATE)
