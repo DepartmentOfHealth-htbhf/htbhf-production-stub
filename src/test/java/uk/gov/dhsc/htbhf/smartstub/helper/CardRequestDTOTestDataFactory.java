@@ -10,10 +10,10 @@ import static uk.gov.dhsc.htbhf.smartstub.helper.TestConstants.*;
 public class CardRequestDTOTestDataFactory {
 
     public static CardRequestDTO aValidCardRequest() {
-        return aValidCardRequestBuild().build();
+        return aValidCardRequestBuilder().build();
     }
 
-    private static CardRequestDTO.CardRequestDTOBuilder aValidCardRequestBuild() {
+    private static CardRequestDTO.CardRequestDTOBuilder aValidCardRequestBuilder() {
         return CardRequestDTO.builder()
                 .claimId(UUID.randomUUID().toString())
                 .firstName(FIRST_NAME)
