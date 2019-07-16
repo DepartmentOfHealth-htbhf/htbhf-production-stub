@@ -5,15 +5,14 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.web.client.TestRestTemplate;
 import org.springframework.http.ResponseEntity;
-import uk.gov.dhsc.htbhf.smartstub.model.CardBalanceResponse;
-import uk.gov.dhsc.htbhf.smartstub.model.CardRequestDTO;
-import uk.gov.dhsc.htbhf.smartstub.model.CreateCardResponse;
+import uk.gov.dhsc.htbhf.smartstub.model.*;
 
 import java.net.URI;
 
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.springframework.http.HttpStatus.OK;
 import static uk.gov.dhsc.htbhf.smartstub.helper.CardRequestDTOTestDataFactory.aValidCardRequest;
+import static uk.gov.dhsc.htbhf.smartstub.helper.DepositFundsRequestDTOTestDataFactory.aValidDepositFundsRequest;
 
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
 class CardServicesControllerIntegrationTest {
@@ -51,8 +50,26 @@ class CardServicesControllerIntegrationTest {
         assertThat(balanceResponse.getLedgerBalanceInPence()).isEqualTo(balanceResponse.getAvailableBalanceInPence());
     }
 
+    @Test
+    void shouldSuccessfullyDepositFunds() {
+        //Given
+        String cardId = "myId";
+        DepositFundsRequestDTO request = aValidDepositFundsRequest();
+        //When
+        ResponseEntity<DepositFundsResponse> response = restTemplate.postForEntity(buildDepositEndpoint(cardId), request, DepositFundsResponse.class);
+        //Then
+        assertThat(response.getStatusCode()).isEqualTo(OK);
+        DepositFundsResponse depositFundsResponse = response.getBody();
+        assertThat(depositFundsResponse).isNotNull();
+        assertThat(depositFundsResponse.getReferenceId()).isNotNull();
+    }
+
     private String buildBalanceEndpoint(String cardId) {
         return ENDPOINT + "/" + cardId + "/balance";
+    }
+
+    private String buildDepositEndpoint(String cardId) {
+        return ENDPOINT + "/" + cardId + "/deposit";
     }
 
 }

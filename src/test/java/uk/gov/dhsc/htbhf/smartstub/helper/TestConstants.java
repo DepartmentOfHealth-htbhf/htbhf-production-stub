@@ -16,4 +16,7 @@ public final class TestConstants {
 
     public static final String EMAIL = "test@email.com";
     public static final String MOBILE = "07123456789";
+
+    public static final String REFERENCE = "My deposit";
+    public static final Integer AMOUNT_IN_PENCE = 1860;
 }
