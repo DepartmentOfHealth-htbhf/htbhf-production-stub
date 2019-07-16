@@ -13,7 +13,7 @@ public class HMRCEligibilityRequestTestDataFactory {
     private static final LocalDate ELIGIBLE_START_DATE = LocalDate.parse("2019-02-14");
     private static final BigDecimal CTC_MONTHLY_INCOME_THRESHOLD = BigDecimal.valueOf(11000);
 
-    public static HMRCEligibilityRequest aHMRCEligibilityRequest() {
+    public static HMRCEligibilityRequest anHMRCEligibilityRequest() {
         return HMRCEligibilityRequest.builder()
                 .person(aValidPerson())
                 .eligibleStartDate(ELIGIBLE_START_DATE)
