@@ -13,4 +13,7 @@ public final class TestConstants {
     public static final String ADDRESS_LINE_2 = "Mystery Spot";
     public static final String TOWN = "Springfield";
     public static final String POSTCODE = "AA1 1AA";
+
+    public static final String EMAIL = "test@email.com";
+    public static final String MOBILE = "07123456789";
 }
