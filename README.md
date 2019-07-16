@@ -13,6 +13,10 @@ To deploy, first login to the production space using `cf login`
 
 Then run `cf push` from the project's root directory.
 
+If the app is being deployed for the first time, you'll need to create a route for it following the instructions below.
+
+## Creating a route
+
 The app is now deployed but with no public route. To create a random route for the app you must run:
 1. `export ROUTE=$(cat /dev/urandom | tr -dc 'a-z' | fold -w 16 | head -n 1)`
 2. `cf map-route htbhf-production-stub london.cloudapps.digital --hostname ${ROUTE}`
