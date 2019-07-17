@@ -20,7 +20,7 @@ public class CardRequestDTOTestDataFactory {
                 .lastName(LAST_NAME)
                 .dateOfBirth(DATE_OF_BIRTH)
                 .email(EMAIL)
-                .mobile(MOBILE)
+                .mobileNumber(MOBILE_NUMBER)
                 .address(aValidAddress());
     }
 }

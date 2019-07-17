@@ -32,7 +32,7 @@ class CardServicesControllerIntegrationTest {
         assertThat(response.getStatusCode()).isEqualTo(OK);
         CreateCardResponse cardResponse = response.getBody();
         assertThat(cardResponse).isNotNull();
-        assertThat(cardResponse.getCardAccountId()).isNotNull();
+        assertThat(cardResponse.getCardAccountId()).startsWith("stub-");
     }
 
 }
