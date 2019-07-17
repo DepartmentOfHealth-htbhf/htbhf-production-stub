@@ -29,7 +29,7 @@ public class CardRequestDTO {
     private String email;
 
     @JsonProperty("mobile")
-    private String mobile;
+    private String mobileNumber;
 
     @JsonProperty("claimId")
     private String claimId;

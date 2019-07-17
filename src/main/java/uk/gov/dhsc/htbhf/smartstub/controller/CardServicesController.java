@@ -14,7 +14,7 @@ public class CardServicesController {
     @PostMapping
     public CreateCardResponse createCard(@RequestBody CardRequestDTO cardRequestDTO) {
         CreateCardResponse createCardResponse = CreateCardResponse.builder()
-                .cardAccountId(UUID.randomUUID().toString())
+                .cardAccountId("stub-" + UUID.randomUUID().toString())
                 .build();
         log.debug("Returning create card response: {}", createCardResponse);
         return createCardResponse;
