@@ -32,7 +32,7 @@ class CardServicesControllerIntegrationTest {
         assertThat(response.getStatusCode()).isEqualTo(OK);
         CreateCardResponse cardResponse = response.getBody();
         assertThat(cardResponse).isNotNull();
-        assertThat(cardResponse.getCardAccountId()).isNotNull();
+        assertThat(cardResponse.getCardAccountId()).startsWith("stub-");
     }
 
     @Test
@@ -61,7 +61,7 @@ class CardServicesControllerIntegrationTest {
         assertThat(response.getStatusCode()).isEqualTo(OK);
         DepositFundsResponse depositFundsResponse = response.getBody();
         assertThat(depositFundsResponse).isNotNull();
-        assertThat(depositFundsResponse.getReferenceId()).isNotNull();
+        assertThat(depositFundsResponse.getReferenceId()).startsWith("stub-");
     }
 
     private String buildBalanceEndpoint(String cardId) {

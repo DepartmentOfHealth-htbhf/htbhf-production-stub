@@ -14,7 +14,7 @@ public class CardServicesController {
     @PostMapping
     public CreateCardResponse createCard(@RequestBody CardRequestDTO cardRequestDTO) {
         CreateCardResponse createCardResponse = CreateCardResponse.builder()
-                .cardAccountId(UUID.randomUUID().toString())
+                .cardAccountId("stub-" + UUID.randomUUID().toString())
                 .build();
         log.debug("Returning create card response: {}", createCardResponse);
         return createCardResponse;
@@ -34,7 +34,7 @@ public class CardServicesController {
     public DepositFundsResponse depositFunds(@PathVariable("cardId") String cardId,
                                              @RequestBody DepositFundsRequestDTO depositFundsRequestDTO) {
         DepositFundsResponse response = DepositFundsResponse.builder()
-                .referenceId(UUID.randomUUID().toString())
+                .referenceId("stub-" + UUID.randomUUID().toString())
                 .build();
         log.debug("Returning deposit funds response: {}", response);
         return response;

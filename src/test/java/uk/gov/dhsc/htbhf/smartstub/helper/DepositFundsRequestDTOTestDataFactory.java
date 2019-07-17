@@ -3,7 +3,7 @@ package uk.gov.dhsc.htbhf.smartstub.helper;
 import uk.gov.dhsc.htbhf.smartstub.model.DepositFundsRequestDTO;
 
 import static uk.gov.dhsc.htbhf.smartstub.helper.TestConstants.AMOUNT_IN_PENCE;
-import static uk.gov.dhsc.htbhf.smartstub.helper.TestConstants.REFERENCE;
+import static uk.gov.dhsc.htbhf.smartstub.helper.TestConstants.DEPOSIT_REFERENCE;
 
 public class DepositFundsRequestDTOTestDataFactory {
 
@@ -14,6 +14,6 @@ public class DepositFundsRequestDTOTestDataFactory {
     private static DepositFundsRequestDTO.DepositFundsRequestDTOBuilder aValidDepositFundsRequestBuilder() {
         return DepositFundsRequestDTO.builder()
                 .amountInPence(AMOUNT_IN_PENCE)
-                .reference(REFERENCE);
+                .reference(DEPOSIT_REFERENCE);
     }
 }
