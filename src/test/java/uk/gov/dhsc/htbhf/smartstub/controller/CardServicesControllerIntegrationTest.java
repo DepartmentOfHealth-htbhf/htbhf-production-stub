@@ -5,6 +5,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.web.client.TestRestTemplate;
 import org.springframework.http.ResponseEntity;
+import uk.gov.dhsc.htbhf.smartstub.model.CardBalanceResponse;
 import uk.gov.dhsc.htbhf.smartstub.model.CardRequestDTO;
 import uk.gov.dhsc.htbhf.smartstub.model.CreateCardResponse;
 
@@ -33,6 +34,24 @@ class CardServicesControllerIntegrationTest {
         CreateCardResponse cardResponse = response.getBody();
         assertThat(cardResponse).isNotNull();
         assertThat(cardResponse.getCardAccountId()).startsWith("stub-");
+    }
+
+    @Test
+    void shouldSuccessfullyGetBalance() {
+        //Given
+        String cardId = "myId";
+        //When
+        ResponseEntity<CardBalanceResponse> response = restTemplate.getForEntity(buildBalanceEndpoint(cardId), CardBalanceResponse.class);
+        //Then
+        assertThat(response.getStatusCode()).isEqualTo(OK);
+        CardBalanceResponse balanceResponse = response.getBody();
+        assertThat(balanceResponse).isNotNull();
+        assertThat(balanceResponse.getAvailableBalanceInPence()).isEqualTo(0);
+        assertThat(balanceResponse.getLedgerBalanceInPence()).isEqualTo(0);
+    }
+
+    private String buildBalanceEndpoint(String cardId) {
+        return ENDPOINT + "/" + cardId + "/balance";
     }
 
 }

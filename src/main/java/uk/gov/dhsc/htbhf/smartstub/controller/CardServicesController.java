@@ -20,4 +20,13 @@ public class CardServicesController {
         return createCardResponse;
     }
 
+    @GetMapping(path = "/{cardId}/balance")
+    public CardBalanceResponse getCardBalance(@PathVariable("cardId") String cardId) {
+        CardBalanceResponse cardBalanceResponse = CardBalanceResponse.builder()
+                .ledgerBalanceInPence(0)
+                .availableBalanceInPence(0)
+                .build();
+        log.debug("Returning card balance: {}", cardBalanceResponse);
+        return cardBalanceResponse;
+    }
 }
