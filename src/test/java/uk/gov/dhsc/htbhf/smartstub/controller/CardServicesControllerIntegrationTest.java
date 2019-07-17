@@ -48,7 +48,6 @@ class CardServicesControllerIntegrationTest {
         assertThat(balanceResponse).isNotNull();
         assertThat(balanceResponse.getAvailableBalanceInPence()).isEqualTo(0);
         assertThat(balanceResponse.getLedgerBalanceInPence()).isEqualTo(0);
-        assertThat(balanceResponse.getLedgerBalanceInPence()).isEqualTo(balanceResponse.getAvailableBalanceInPence());
     }
 
     private String buildBalanceEndpoint(String cardId) {
