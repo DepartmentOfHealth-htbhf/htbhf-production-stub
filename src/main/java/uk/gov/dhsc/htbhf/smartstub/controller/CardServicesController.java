@@ -29,4 +29,15 @@ public class CardServicesController {
         log.debug("Returning card balance: {}", cardBalanceResponse);
         return cardBalanceResponse;
     }
+
+    @PostMapping("/{cardId}/deposit")
+    public DepositFundsResponse depositFunds(@PathVariable("cardId") String cardId,
+                                             @RequestBody DepositFundsRequestDTO depositFundsRequestDTO) {
+        DepositFundsResponse response = DepositFundsResponse.builder()
+                .referenceId("stub-" + UUID.randomUUID().toString())
+                .build();
+        log.debug("Returning deposit funds response: {}", response);
+        return response;
+    }
+
 }
