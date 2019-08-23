@@ -1,0 +1,29 @@
+version: 2
+jobs:
+  build:
+    docker:
+      - image: circleci/openjdk:11.0.4-jdk-stretch
+    steps:
+      - checkout
+      - restore_cache:
+          key: v1-gradle-{{ checksum "build.gradle" }}-{{ checksum "gradle/wrapper/gradle-wrapper.properties" }}
+      - add_ssh_keys:
+          fingerprints:
+            - "68:eb:5f:9a:27:48:04:d5:09:2b:57:a0:bf:1b:57:76"
+      - run:
+          name: build
+          command: ./gradlew clean build
+      - save_cache:
+          paths:
+            - ~/.gradle
+          key: v1-gradle-{{ checksum "build.gradle" }}-{{ checksum "gradle/wrapper/gradle-wrapper.properties" }}
+          when: always
+
+workflows:
+  version: 2
+  build:
+    jobs:
+      - build:
+          filters:
+            branches:
+              ignore: gh-pages
