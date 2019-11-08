@@ -1,4 +1,4 @@
-package uk.gov.dhsc.htbhf.smartstub.controller;
+package uk.gov.dhsc.htbhf.smartstub.controller.v1;
 
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -6,8 +6,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import uk.gov.dhsc.htbhf.eligibility.model.EligibilityStatus;
-import uk.gov.dhsc.htbhf.smartstub.model.BenefitDTO;
-import uk.gov.dhsc.htbhf.smartstub.model.DWPEligibilityRequest;
+import uk.gov.dhsc.htbhf.smartstub.model.v1.BenefitDTO;
+import uk.gov.dhsc.htbhf.smartstub.model.v1.DWPEligibilityRequest;
 
 @RestController
 @RequestMapping("/v1/dwp/benefits")

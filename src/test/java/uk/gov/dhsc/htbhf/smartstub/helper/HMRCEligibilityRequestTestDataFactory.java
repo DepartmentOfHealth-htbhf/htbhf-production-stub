@@ -5,7 +5,7 @@ import uk.gov.dhsc.htbhf.smartstub.model.HMRCEligibilityRequest;
 import java.math.BigDecimal;
 import java.time.LocalDate;
 
-import static uk.gov.dhsc.htbhf.smartstub.helper.PersonDTOTestDataFactory.aValidPerson;
+import static uk.gov.dhsc.htbhf.smartstub.helper.v1.PersonDTOTestDataFactory.aValidPerson;
 
 public class HMRCEligibilityRequestTestDataFactory {
 

@@ -1,4 +1,4 @@
-package uk.gov.dhsc.htbhf.smartstub.model;
+package uk.gov.dhsc.htbhf.smartstub.model.v1;
 
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonProperty;
