@@ -1,7 +1,7 @@
-package uk.gov.dhsc.htbhf.smartstub.helper;
+package uk.gov.dhsc.htbhf.smartstub.helper.v1;
 
 
-import uk.gov.dhsc.htbhf.smartstub.model.AddressDTO;
+import uk.gov.dhsc.htbhf.smartstub.model.v1.AddressDTO;
 
 import static uk.gov.dhsc.htbhf.smartstub.helper.TestConstants.ADDRESS_LINE_1;
 import static uk.gov.dhsc.htbhf.smartstub.helper.TestConstants.ADDRESS_LINE_2;

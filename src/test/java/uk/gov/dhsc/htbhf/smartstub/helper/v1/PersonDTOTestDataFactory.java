@@ -1,8 +1,8 @@
-package uk.gov.dhsc.htbhf.smartstub.helper;
+package uk.gov.dhsc.htbhf.smartstub.helper.v1;
 
-import uk.gov.dhsc.htbhf.smartstub.model.PersonDTO;
+import uk.gov.dhsc.htbhf.smartstub.model.v1.PersonDTO;
 
-import static uk.gov.dhsc.htbhf.smartstub.helper.AddressDTOTestDataFactory.aValidAddress;
+import static uk.gov.dhsc.htbhf.smartstub.helper.v1.AddressDTOTestDataFactory.aValidAddress;
 import static uk.gov.dhsc.htbhf.smartstub.helper.TestConstants.DATE_OF_BIRTH;
 import static uk.gov.dhsc.htbhf.smartstub.helper.TestConstants.FIRST_NAME;
 import static uk.gov.dhsc.htbhf.smartstub.helper.TestConstants.NINO;

@@ -5,6 +5,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
+import uk.gov.dhsc.htbhf.smartstub.model.v1.AddressDTO;
 
 import java.time.LocalDate;
 

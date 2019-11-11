@@ -6,7 +6,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import uk.gov.dhsc.htbhf.eligibility.model.EligibilityStatus;
-import uk.gov.dhsc.htbhf.smartstub.model.BenefitDTO;
+import uk.gov.dhsc.htbhf.smartstub.model.v1.BenefitDTO;
 import uk.gov.dhsc.htbhf.smartstub.model.HMRCEligibilityRequest;
 
 @RestController

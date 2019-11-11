@@ -1,11 +1,11 @@
-package uk.gov.dhsc.htbhf.smartstub.helper;
+package uk.gov.dhsc.htbhf.smartstub.helper.v1;
 
-import uk.gov.dhsc.htbhf.smartstub.model.DWPEligibilityRequest;
+import uk.gov.dhsc.htbhf.smartstub.model.v1.DWPEligibilityRequest;
 
 import java.math.BigDecimal;
 import java.time.LocalDate;
 
-import static uk.gov.dhsc.htbhf.smartstub.helper.PersonDTOTestDataFactory.aValidPerson;
+import static uk.gov.dhsc.htbhf.smartstub.helper.v1.PersonDTOTestDataFactory.aValidPerson;
 
 public class DWPEligibilityRequestTestDataFactory {
 
