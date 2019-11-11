@@ -39,13 +39,13 @@ export APP_PATH="build/libs/$APP_NAME-$APP_VERSION.jar"
 # deploy to production
 export CF_SPACE=production
 /bin/bash ${SCRIPT_DIR}/deploy.sh
-cf map-route "${APP_NAME}-${CF_SPACE}" ${CF_PUBLIC_DOMAIN} --hostname ${PRODUCTION_HOSTNAME}
+cf map-route "${APP_NAME}" ${CF_PUBLIC_DOMAIN} --hostname ${PRODUCTION_HOSTNAME}
 
 RESULT=$?
 
 if [[ ${RESULT} != 0 ]]; then
   echo "# Deployment to production failed"
   echo "# See deployment logs below"
-  cf logs ${APP_NAME}-${CF_SPACE} --recent
+  cf logs ${APP_NAME} --recent
   exit 1
 fi
