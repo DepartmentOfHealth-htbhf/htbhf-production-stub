@@ -7,7 +7,7 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.web.client.TestRestTemplate;
 import org.springframework.http.ResponseEntity;
 import org.springframework.test.context.junit.jupiter.SpringExtension;
-import uk.gov.dhsc.htbhf.productionstub.model.v2.*;
+import uk.gov.dhsc.htbhf.dwp.model.v2.*;
 
 import java.net.URI;
 
@@ -28,15 +28,17 @@ class DWPBenefitControllerIntegrationTest {
         ResponseEntity<IdentityAndEligibilityResponse> benefit = restTemplate.getForEntity(ENDPOINT, IdentityAndEligibilityResponse.class);
 
         assertThat(benefit.getStatusCode()).isEqualTo(OK);
-        assertThat(benefit.getBody().getEligibilityStatus()).isEqualTo(EligibilityOutcome.NOT_CONFIRMED);
-        assertThat(benefit.getBody().getAddressLine1Match()).isEqualTo(VerificationOutcome.NOT_MATCHED);
-        assertThat(benefit.getBody().getEmailAddressMatch()).isEqualTo(VerificationOutcome.NOT_MATCHED);
-        assertThat(benefit.getBody().getMobilePhoneMatch()).isEqualTo(VerificationOutcome.NOT_MATCHED);
-        assertThat(benefit.getBody().getPostcodeMatch()).isEqualTo(VerificationOutcome.NOT_MATCHED);
-        assertThat(benefit.getBody().getPregnantChildDOBMatch()).isEqualTo(VerificationOutcome.NOT_MATCHED);
-        assertThat(benefit.getBody().getQualifyingBenefits()).isEqualTo(QualifyingBenefits.NOT_SET);
-        assertThat(benefit.getBody().getDeathVerificationFlag()).isEqualTo(DeathVerificationFlag.N_A);
         assertThat(benefit.getBody().getIdentityStatus()).isEqualTo(IdentityOutcome.NOT_MATCHED);
+        assertThat(benefit.getBody().getEligibilityStatus()).isEqualTo(EligibilityOutcome.NOT_SET);
+        assertThat(benefit.getBody().getQualifyingBenefits()).isEqualTo(QualifyingBenefits.NOT_SET);
+        assertThat(benefit.getBody().getMobilePhoneMatch()).isEqualTo(VerificationOutcome.NOT_SET);
+        assertThat(benefit.getBody().getEmailAddressMatch()).isEqualTo(VerificationOutcome.NOT_SET);
+        assertThat(benefit.getBody().getAddressLine1Match()).isEqualTo(VerificationOutcome.NOT_SET);
+        assertThat(benefit.getBody().getPostcodeMatch()).isEqualTo(VerificationOutcome.NOT_SET);
+        assertThat(benefit.getBody().getPregnantChildDOBMatch()).isEqualTo(VerificationOutcome.NOT_SET);
+        assertThat(benefit.getBody().getHouseholdIdentifier()).isEqualTo("");
+        assertThat(benefit.getBody().getDobOfChildrenUnder4()).isEmpty();
+        assertThat(benefit.getBody().getDeathVerificationFlag()).isEqualTo(DeathVerificationFlag.N_A);
     }
 
 }

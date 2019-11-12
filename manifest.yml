@@ -1,12 +1,12 @@
 ---
 applications:
-- name: htbhf-production-stub
+- name: htbhf-production-stub((app-suffix))
   buildpacks:
   - java_buildpack
   health-check-type: http
   health-check-http-endpoint: /actuator/health
   routes:
-    - route: htbhf-production-stub.apps.internal
+    - route: htbhf-production-stub((app-suffix)).apps.internal
   env:
     JBP_CONFIG_OPEN_JDK_JRE: '{jre: { version: 11.+ }}'
   services:
